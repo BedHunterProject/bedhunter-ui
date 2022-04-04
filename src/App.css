@@ -336,7 +336,6 @@
 .footer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
   font-weight: bold;
   background-color: #af9a7d;
 }
