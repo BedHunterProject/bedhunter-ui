@@ -1,12 +1,14 @@
-UI:
-npm i
-npm i react-router-dom
-npm i react-router-dom@5.2.0 //hiba esetén 
+## UI:
+
+npm i\
+npm i react-router-dom\
+npm i react-router-dom@5.2.0 //hiba esetén\
 npm i react-icons
 
-Server:
-npm i 
-npm i mongodb
+## Server:
+
+npm i\
+npm i mongodb\
 npm i express
 
 # Getting Started with Create React App
