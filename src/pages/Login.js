@@ -7,12 +7,20 @@ export default function Login({}){
     const [password, setPassword] = useState('')
 
     const handleSubmit = (e) =>{
+        fetch ('http://localhost:3000/login', {
+            method: 'POST',
+            body: JSON.stringify(this.state)
+        })
+        .then(function(response){
+            console.log(response)
+            return response.json();
+        })
         e.preventDefault()
     }   
     
     return(
         <div className="login-register-container">
-            <from  className="login-register-form" onSubmit={handleSubmit}>
+            <form  className="login-register-form" onSubmit={handleSubmit}>
                 <h1 className="login-register-text">Bejeletkezés</h1>
                 <div className="login-register">
                     <label>Email</label>
@@ -26,7 +34,7 @@ export default function Login({}){
                 <div className="button-flex">
                 <button type="submit" className="btn-primary-login-register" >Sign in</button>
                 </div>
-            </from>
+            </form>
         </div>
         )
     
