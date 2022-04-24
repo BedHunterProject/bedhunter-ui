@@ -28,7 +28,7 @@ export default function Login({}){
                 </div>
                 <div className="login-register">
                     <label>Password</label>
-                        <input type="text" value={password} onChange={e => setPassword(e.target.value)} className="login-register-input" placeholder="Password" />
+                        <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="login-register-input" placeholder="Password" />
                 </div>
                     <p className="register">Ha még nincs fiókod itt <a href="/register">regisztrálhatsz</a>!</p>
                 <div className="button-flex">

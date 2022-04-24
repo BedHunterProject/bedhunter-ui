@@ -8,43 +8,30 @@
     --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
     --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   }
+
   /* Body kezdete */
   body {
-    padding-top: 66px;
-    color: #222;
-    background: #fff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.4;
+    padding-top: 65px;
+    font-family: Verdana;
   }
   h1 {
-    font-size: 3em;
-    line-height: 1;
-    margin-bottom: 0.5em;
+    font-size: 48 px;
+    margin-bottom: 8px;
   }
   h2 {
-    font-size: 2em;
-    margin-bottom: 0.75em;
+    font-size: 32px;
+    margin-bottom: 12px;
   }
   h3 {
-    font-size: 1.5em;
-    line-height: 1;
-    margin-bottom: 1em;
+    font-size: 24px;
+    margin-bottom: 16px;
   }
-  h4 {
-    font-size: 1.2em;
-    line-height: 1.25;
-    margin-bottom: 1.25em;
+
+  a{
+    text-decoration: none;
+    color: #222;
   }
-  h5 {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 1.5em;
-  }
-  h6 {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 1.5em;
-  }
+
   
   .btn-primary {
     display: inline-block;
@@ -54,7 +41,6 @@
     background: #af9a7d;
     padding: 0.4rem 0.9rem;
     border: 3px solid #af9a7d;
-    transition: var(--mainTransition);
     text-transform: uppercase;
     cursor: pointer;
     margin-left: 10px;
@@ -62,33 +48,17 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    transition: var(--mainTransition);
   }
   .btn-primary:hover {
     background: transparent;
     color: #af9a7d;
   }
-  .loading {
-    text-transform: capitalize;
-    text-align: center;
-    margin-top: 3rem;
-  }
-  .error {
-    text-align: center;
-    text-transform: uppercase;
-    margin: 2rem 0;
-  }
-  .empty-search {
-    text-align: center;
-    text-transform: capitalize;
-    margin: 2rem 0;
-    padding: 1rem;
-    letter-spacing: 3px;
-  }
   /* Body vége */
 
 
-  /* Navbar kezdete */
-  .navbar {
+ /* Navbar kezdete */
+ .navbar{
     position: fixed;
     top: 0;
     left: 0;
@@ -101,63 +71,58 @@
     display: flex;
     justify-content: space-between;
   }
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.nav-icon {
+  font-size: 1.5rem;
+  color:#fff;
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color:#222;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.nav-links a:hover {
+  color:#fff;
+}
+
+.show-nav {
+  height: 280px;
+}
+@media screen and (min-width: 768px) {
   .nav-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
+    display: none;
   }
-  .nav-icon {
-    font-size: 1.5rem;
-    color: #f7f7f7;
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
   }
   .nav-links {
-    height: 0;
-    overflow: hidden;
-    transition: var(--mainTransition);
-    list-style-type: none;
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
   }
   .nav-links a {
-    display: block;
-    float: right;
-    text-decoration: none;
-    padding: 1rem 0;
-    color: #222;;
-    transition: var(--mainTransition);
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 3px;
+    margin: 0 1rem;
+    padding: 0.5rem 0;
   }
-  .nav-links a:hover {
-    color: #f7f7f7;
-  }
-  
-  .show-nav {
-    height: 280px;
-  }
-  @media screen and (min-width: 768px) {
-    .nav-btn {
-      display: none;
-
-    }
-    .nav-center {
-      max-width: 1700px;
-      margin: 0 auto;
-      display: flex;
-    }
-    .nav-links {
-      height: auto;
-      display: flex;
-      margin-left:30rem;
-    }
-    .nav-links a {
-      margin: 0 1rem;
-      padding: 0.5rem 0;
-      display: flex;
-    }
-  }
-  /* Navbár vége*/
+}
+/* Navbár vége*/
 
 
   /* Hero oldal */
@@ -246,6 +211,7 @@
   
 
 /*card*/
+/*
 .card-container {
   display: flex;
   justify-content: center;
@@ -267,7 +233,7 @@
 
 .card > h1 {
   justify-self: flex-start;
-}
+}*/
 
 /*login-register form*/
 .login-register-container{
@@ -313,7 +279,7 @@
     background: #af9a7d;
     padding: 0.4rem 0.9rem;
     border: 3px solid #af9a7d;
-    transition: var(--mainTransition);
+   
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 20px;
@@ -334,14 +300,25 @@
 
 /*Footer*/
 .footer {
-  display: flex;
+  background-color: #af9a7d;
+  flex-direction: column;
+  font-weight: bold;
+  box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+  padding: 20px 50px;
+
+ 
+
+  /*display: flex;
   flex-direction: column;
   font-weight: bold;
   background-color: #af9a7d;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100%;*/
 }
 
 
@@ -357,12 +334,12 @@
   height: 25px;
 }
 
-.footer-info  {
+.footer-information  {
   display: flex;
   justify-content: center;
 }
 
-.footer-info-left, .footer-info-center, .footer-info-right {
+.footer-logo, .footer-information-center, .footer-information-right {
   font-size: x-small;
   display: flex;
   flex-direction: column;
@@ -370,44 +347,95 @@
   width: 30%;
 }
 
-.footer-info-name, .footer-info-email, .footer-info-number {
+.footer-information-name, .footer-information-email {
   margin-bottom: 10px;
 }
 
-.footer-info-name, .footer-info-returns {
+.footer-information-name, .footer-information-returns {
   text-align: start;
 }
 
-.footer-info-email, .footer-info-terms {
+.footer-information-email, .footer-information-terms {
   text-align: center;
 }
 
-.footer-info-number, .footer-info-contact {
+ .footer-information-contact {
+   font-size:20px;
   text-align: end;
 }
+/*Footer vége*/
 
-.footer-date {
+/*contact*/
+.contact-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("images/texture.jpg");
+}
+
+.contact-card {
+  height: 500px;
+  background-color: #af9a7d;
+  color: #222;
+  border-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
-
-.footer-seperator {
-  flex-grow: 1;
-  border: none;
-  height: 1px;
-  background-color: #af9a7d;
-  width: 100%;
+.card-name {
+  margin-top: 15px;
+  font-size: 1.5em;
 }
 
-.footer-name {
-  display: flex;
-  justify-content: center;
+.card-image{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 60px;
 }
-
-.footer-bottom-name {
+.contact-btn {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color:  #af9a7d;;
+  background: #222;
+  padding: 0.4rem 0.9rem;
+  border: 3px solid #222;
   text-transform: uppercase;
-  font-family: RobotoBold;
-  font-size: large;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+
 }
-/*Footer vége*/
+.contact-btn:hover {
+  background: transparent;
+  color: #222;
+}
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+
+}
+.social-icons a{
+  text-decoration: none;
+  color: #222 ;
+  font-weight: bold;
+  
+}
