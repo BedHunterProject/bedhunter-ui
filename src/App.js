@@ -1,11 +1,10 @@
 import React, {Component} from "react";
-import {Switch, Route } from "react-router-dom";
+import {Switch, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
 
 import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
-import SingleRoom from "./pages/SingleRoom";
 import Promotions from "./pages/Promotions";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
@@ -38,16 +37,19 @@ class App extends Component {
       return body;
     };
 
+
     render() {
+
+      console.log("alma")
+
         const App = () => (
         <>
       <Navbar />
       <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/rooms/" component={Rooms} />
-        <Route exact path="/rooms/:slug" component={SingleRoom} />
-        <Route exact path="/promotions/" component={Promotions} />
+        <Route exact path="/hotels/" component={Rooms} />
+        <Route exact path="/rooms/" component={Promotions} />
         <Route exact path="/contact/" component={Contact} />
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>

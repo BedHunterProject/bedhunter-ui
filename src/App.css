@@ -211,7 +211,7 @@
   
 
 /*card*/
-/*
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -233,7 +233,7 @@
 
 .card > h1 {
   justify-self: flex-start;
-}*/
+}
 
 /*login-register form*/
 .login-register-container{

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Register(){
     
@@ -9,6 +10,8 @@ export default function Register(){
         birthdate: "",
         phone: ""
     })
+
+    const navigate = useHistory();
 
     const handleInput = (e) =>{
         const name = e.target.name;
@@ -23,11 +26,15 @@ export default function Register(){
         e.preventDefault();
         fetch ('http://localhost:5000/register', {  //// back end PORT-ja kell
             method: 'POST',
-            body: JSON.stringify(this.state) //// ennek csak a userRegistration értékeit kéne átadni, nem az egész HTML KÓDOT (emiatt megy az "Unexpected token < at JSON")
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(userRegistration) //// ennek csak a userRegistration értékeit kéne átadni, nem az egész HTML KÓDOT (emiatt megy az "Unexpected token < at JSON")
         }) // cannot read properties of state
         .then(function(response){ 
             console.log(response)
-            return response.json();
+            navigate.push("/login");
+            //return response.json();
         })
 
         setuserRegistration({username: "", email:"", phone:"", password:""})

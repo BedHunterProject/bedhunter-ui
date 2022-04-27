@@ -1,19 +1,28 @@
 import React, { useState } from "react";  // még a gombok nincsenek teljesen kész css kell!!
+import { Link, Navigate, useHistory } from "react-router-dom";
 
 
 export default function Login({}){
+
+    const navigate= useHistory();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const handleSubmit = (e) =>{
-        fetch ('http://localhost:3000/login', {
+        e.preventDefault();
+        fetch ('http://localhost:5000/login', {
             method: 'POST',
-            body: JSON.stringify(this.state)
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({email, password})
         })
-        .then(function(response){
+        .then(async function(response){
             console.log(response)
-            return response.json();
+            response = await response.json();
+            window.sessionStorage.setItem("userId", response.userid)
+            navigate.push("/")
         })
         e.preventDefault()
     }   
@@ -30,7 +39,7 @@ export default function Login({}){
                     <label>Password</label>
                         <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="login-register-input" placeholder="Password" />
                 </div>
-                    <p className="register">Ha még nincs fiókod itt <a href="/register">regisztrálhatsz</a>!</p>
+                    <p className="register">Ha még nincs fiókod itt <Link to="/register">regisztrálhatsz</Link>!</p>
                 <div className="button-flex">
                 <button type="submit" className="btn-primary-login-register" >Sign in</button>
                 </div>

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <section className="footer-social-media">
       <FaGithub/> 
-        <a href="https://github.com/BedHunterProject" target="_blank" rel="noreferrer">Github</a>
+      <Link to={{pathname: "https://github.com/BedHunterProject"}} target="_blank" rel="noreferrer">Github</Link>
       </section>
       <section className="footer-information">
         <section className="footer-logo">
@@ -32,7 +32,7 @@ const Footer = () => {
         </section>
         <section className="footer-information-right">
           <section className="footer-information-contact">
-          <a><Link to="/contact">Contact oldal</Link></a>
+        <Link to="/contact">Contact oldal</Link>
           <br/>
           </section>
         </section>
