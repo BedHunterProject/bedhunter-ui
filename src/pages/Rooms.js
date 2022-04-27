@@ -10,7 +10,17 @@ function Rooms (){
     useEffect(() => {
         var userId = window.sessionStorage.getItem("userId")
         console.log("Hotels collection called")
-        fetch(`http://localhost:5000/hotels`).then(res => res.json()).then((data) => setHotels([...data.hotels]))
+        fetch(`http://localhost:5000/hotels`, {
+            method: 'GET',
+            headers: {
+                "Content-Type":"application/json"  //json-ben várjuk a responset. nem árt ha van.
+            }
+        }).then(res => {
+            return res.json(); //vissza is kell adni az értéket hogy a then tudja használni.
+        }).then((data) => {
+            console.log(data);
+            setHotels([...data.hotels])
+        })
         console.log("Hotels collection finished")
     }, [])
 
