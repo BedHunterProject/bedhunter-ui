@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom'
+
 const PromotionsCard = ({ beds_number, hotel_name, date_start, date_end, price  }) => {
   return (
 
@@ -9,7 +11,7 @@ const PromotionsCard = ({ beds_number, hotel_name, date_start, date_end, price  
         <p>{date_start}-tól</p>
         <p>{date_end}-ig</p>
         <b>{price} Ft/fő/éj</b>
-        
+        <Link className="contact-btn" to="/finish">Foglalás</Link>
     </div>
   );
 };

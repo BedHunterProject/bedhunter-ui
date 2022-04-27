@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
+import Finish from "./pages/Finish";
 
 
 import Navbar from "./components/Navbar";
@@ -40,7 +41,7 @@ class App extends Component {
 
     render() {
 
-      console.log("alma")
+      //console.log("alma")
 
         const App = () => (
         <>
@@ -53,6 +54,7 @@ class App extends Component {
         <Route exact path="/contact/" component={Contact} />
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>
+        <Route exact path="/finish" component={Finish}/>
         <Route component={Error} />
         <p className="App-intro">{this.state.data}</p> 
       </Switch>

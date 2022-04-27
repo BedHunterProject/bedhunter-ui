@@ -226,6 +226,7 @@
     align-items: center;
     background-color: #af9a7d;
     min-width: 300px;
+    max-width: 326px;
     height: 500px;
     border-radius: 5px;
     margin: 5px;
@@ -401,7 +402,7 @@
   display: inline-block;
   text-decoration: none;
   letter-spacing: 3px;
-  color:  #af9a7d;;
+  color:  #af9a7d;
   background: #222;
   padding: 0.4rem 0.9rem;
   border: 3px solid #222;
