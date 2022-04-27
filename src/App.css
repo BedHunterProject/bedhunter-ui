@@ -1,38 +1,441 @@
-.App {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --mainTransition: all 0.3s linear;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Body kezdete */
+  body {
+    padding-top: 65px;
+    font-family: Verdana;
+  }
+  h1 {
+    font-size: 48 px;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  a{
+    text-decoration: none;
+    color: #222;
+  }
+
+  
+  .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: #222;;
+    background: #af9a7d;
+    padding: 0.4rem 0.9rem;
+    border: 3px solid #af9a7d;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: var(--mainTransition);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: #af9a7d;
+  }
+  /* Body vége */
+
+
+ /* Navbar kezdete */
+ .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background: #af9a7d;
+    z-index: 1;
+  }
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+  }
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.nav-icon {
+  font-size: 1.5rem;
+  color:#fff;
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color:#222;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.nav-links a:hover {
+  color:#fff;
+}
+
+.show-nav {
+  height: 280px;
+}
+@media screen and (min-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+}
+/* Navbár vége*/
+
+
+  /* Hero oldal */
+  .defaultHero,
+  .roomsHero, .promotionsHero, .contactHero {
+    min-height: calc(100vh - 66px);
+    background: url("images/background.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .roomsHero{
+    background-image: url("images/background2.jpg");
+    min-height: 70vh;
+  }
+  .promotionsHero{
+    background-image: url("images/sale.jpg");
+    min-height: 70vh;
+  }
+  .contactHero{
+    background-image: url("images/contact.jpg");
+    min-height: 70vh;
+  }
+  /* Hero oldal vége */
+
+  /* Banner */
+.banner {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+}
+.banner h1 {
+  font-size: 2.5rem;
+}
+.banner div {
+  width: 10rem;
+  height: 5px;
+  background: #af9a7d;
+  margin: 1.7rem auto;
+}
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 576px) {
+  .banner {
+    padding: 2rem 3rem;
+  }
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner {
+    padding: 2rem 6rem;
+  }
+  .banner h1 {
+    font-size: 4rem;
+  }
+}
+/* Banner vége */
+
+  /* Title */
+  .section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-title h4 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+  .section-title div {
+    width: 5rem;
+    height: 5px;
+    margin: 0 auto;
+    background: #af9a7d;
+  }
+  /* Title vége */
+  
+
+/*card*/
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #af9a7d;
+    min-width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.card > h1 {
+  justify-self: flex-start;
+}
+
+/*login-register form*/
+.login-register-container{
+  width: 400px;
+  background-color: white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.login-register-text{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-register-input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.register, .register a{
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+.register a{
+  color: #af9a7d;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn-primary-login-register{
+  display: inline-block;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: #222;;
+    background: #af9a7d;
+    padding: 0.4rem 0.9rem;
+    border: 3px solid #af9a7d;
+   
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.btn-primary-login-register:hover {
+  background: transparent;
+  color: #af9a7d;
+}
+.button-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   }
+/*login-register form vége*/
+
+/*Footer*/
+.footer {
+  background-color: #af9a7d;
+  flex-direction: column;
+  font-weight: bold;
+  box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+  padding: 20px 50px;
+
+ 
+
+  /*display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  background-color: #af9a7d;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.footer-social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-social-media-icon {
+  margin: 0px 4px;
+  width: 25px;
+  height: 25px;
+}
+
+.footer-information  {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo, .footer-information-center, .footer-information-right {
+  font-size: x-small;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+.footer-information-name, .footer-information-email {
+  margin-bottom: 10px;
+}
+
+.footer-information-name, .footer-information-returns {
+  text-align: start;
+}
+
+.footer-information-email, .footer-information-terms {
+  text-align: center;
+}
+
+ .footer-information-contact {
+   font-size:20px;
+  text-align: end;
+}
+/*Footer vége*/
+
+/*contact*/
+.contact-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("images/texture.jpg");
+}
+
+.contact-card {
+  height: 500px;
+  background-color: #af9a7d;
+  color: #222;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card-name {
+  margin-top: 15px;
+  font-size: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.card-image{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 60px;
+}
+.contact-btn {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color:  #af9a7d;;
+  background: #222;
+  padding: 0.4rem 0.9rem;
+  border: 3px solid #222;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+
+}
+.contact-btn:hover {
+  background: transparent;
+  color: #222;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+
+}
+.social-icons a{
+  text-decoration: none;
+  color: #222 ;
+  font-weight: bold;
+  
 }
